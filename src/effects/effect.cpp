@@ -1,6 +1,11 @@
 #include <iostream>
 #include "tremolo.h"
 #include "vibrato.h"
+#include "distortion.h"
+#include "flanger.h"
+#include "reverb.h"
+#include "wah.h"
+#include "chorus.h"
 
 /*
   For each new effect:
@@ -20,6 +25,21 @@ namespace upc {
     }
 	else if (name == "Vibrato") {
       pEffect = (Effect *) new Vibrato(parameters);
+    }
+    else if (name == "Distortion") {
+      pEffect = (Effect *) new Distortion(parameters);
+    }
+    else if (name == "Flanger") {
+      pEffect = (Effect *) new Flanger(parameters);
+    }
+    else if (name == "Reverb") {
+      pEffect = (Effect *) new Reverb(parameters);
+    }
+    else if (name == "Wah") {
+      pEffect = (Effect *) new Wah(parameters);
+    }
+    else if (name == "Chorus") {
+      pEffect = (Effect *) new Chorus(parameters);
     }
     return pEffect;
   }

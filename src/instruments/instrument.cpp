@@ -1,5 +1,10 @@
 #include <iostream>
 #include "instrument_dumb.h"
+#include "instrument_wavetable.h" // síntesis por tabla de ondas periódica desde fichero WAV
+#include "instrument_sampler.h"   // sampler de disparo único con transposición de tono
+#include "instrument_vibrato.h"   // vibrato nativo via modulación FM de baja profundidad
+#include "instrument_fm.h"        // síntesis FM de Chowning
+#include "seno.h"                 // sinusoide por tabla con pitch correcto e interpolación lineal
 
 /*
   For each new instrument:
@@ -17,6 +22,16 @@ namespace upc {
     //    cout << name << ": " << parameters << endl;
     if (name == "InstrumentDumb") {
       pInst = (Instrument *) new InstrumentDumb(parameters);
+    } else if (name == "InstrumentWavetable") {
+      pInst = (Instrument *) new InstrumentWavetable(parameters);
+    } else if (name == "InstrumentSampler") {
+      pInst = (Instrument *) new InstrumentSampler(parameters);
+    } else if (name == "vibrato" || name == "InstrumentVibrato") {
+      pInst = (Instrument *) new InstrumentVibrato(parameters);
+    } else if (name == "fm" || name == "InstrumentFM") {
+      pInst = (Instrument *) new InstrumentFM(parameters);
+    } else if (name == "Seno") {
+      pInst = (Instrument *) new Seno(parameters);
     }
     return pInst;
   }

@@ -1,0 +1,23 @@
+#ifndef SENO_H
+#define SENO_H
+
+#include <vector>
+#include <string>
+#include "instrument.h"
+#include "envelope_adsr.h"
+
+namespace upc {
+  class Seno: public upc::Instrument {
+    EnvelopeADSR adsr;
+    float phase, step;
+    float A;
+    std::vector<float> tbl;
+  public:
+    Seno(const std::string &param = "");
+    void command(long cmd, long note, long velocity=1);
+    const std::vector<float> & synthesize();
+    bool is_active() const {return bActive;}
+  };
+}
+
+#endif
