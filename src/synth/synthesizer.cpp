@@ -23,7 +23,7 @@ Usage:
 Options:
     -b FLOAT, --bpm=FLOAT      Beats per minute: tempo [default: 120]
     -t FLOAT, --tpb=FLOAT      Ticks per beat: must match input score  [default: 120]
-    -g FLOAT, --gain=FLOAT     Gain applied to the output waveform [default: 0.5]
+    -g FLOAT, --gain=FLOAT     Gain applied to the output waveform [default: 1.0]
     -e STR, --effect-file=STR  Text file with the definition of the effects
     -v, --verbose              Show the score on screen as it is played
     -h, --help                 Show this screen

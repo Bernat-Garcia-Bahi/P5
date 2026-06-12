@@ -182,8 +182,9 @@ namespace upc {
       }
     }
 
+    float norm = instruments.size() > 0 ? gain / (float)instruments.size() : gain;
     for (unsigned n = 0; n < xt.size(); ++n)
-      xt[n] *= gain;
+      xt[n] *= norm;
 
     return xt;
   }
